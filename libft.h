@@ -2,7 +2,8 @@
 #define LIBFT_H
 #include <stddef.h>
 #include <unistd.h>
-
+//incluir la libreria en ambos archivos fuentes la principal "main" y donde se llame 
+//a la funcion donde se utilice el dato que se pide en especifico
 void	*ft_bzero(char *s, size_t n);
 void	*ft_calloc(size_t num, size_t bit);
 void	*ft_memchr(const void *ptr, int c, size_t num);
