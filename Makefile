@@ -11,9 +11,9 @@ NAME = libft.a
 
 CCFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isascii.c ft_isdigit\
-ft_memchr.c ft_memmove.c ft_strdup.c ft_strlcpy.c ft_strlen ft_strnstr.c\
-ft_toupper.c
+SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isascii.c\
+ ft_isdigit.c ft_memchr.c ft_memmove.c ft_strdup.c ft_strlcpy.c ft_strlen.c\
+ ft_strnstr.c ft_toupper.c ft_substr.c ft_strjoin.c
 
 OBJ = $(SRC:.c=.o)
 LIBFTH = libft.h
@@ -23,14 +23,13 @@ all: $(NAME)
 #para que cree el archivo .a
 $(NAME): $(OBJ) $(LIBFTH)
 	ar rcs $(NAME) $(OBJ)
-
+#arreglar como se ejecuta el main
 #para que se ejecute el archivo main.c
-all2: $(OBJ) $(LIBFTH)
-	gcc $(CCFLAGS) main.o $(OBJ) -o prog
+all2: $(OBJ) main.o libft.h
+	gcc $(CCFLAGS) main.o $(OBJ) 
+
 main.o: main.c libft.h
 	gcc -c main.c
 
-
-
 clean:
-	rm -f *.o prog
+	rm -f *.o a.out
