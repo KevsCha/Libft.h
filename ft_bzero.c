@@ -1,14 +1,24 @@
-void *ft_bzero(char *s, size_t n)
-{
-	unsigned char *str;
-	size_t i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 12:33:21 by kquispe           #+#    #+#             */
+/*   Updated: 2023/10/01 15:31:05 by kquispe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	str = (char *)s;
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*str;
+	int				i;
+
+	str = (unsigned char *)s;
 	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (0);
+	while (i < n && ++i)
+		str[i - 1] = 0;
 }

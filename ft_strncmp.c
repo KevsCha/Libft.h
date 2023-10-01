@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 14:30:41 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/01 14:35:11 by kquispe          ###   ########.fr       */
+/*   Created: 2023/09/18 12:36:45 by kquispe           #+#    #+#             */
+/*   Updated: 2023/10/01 15:38:02 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+#include "libft.h"
+
+int ft_strncmp(const char *str1, const char *str2, size_t size)
 {
-    if((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        return (1);
-    return (0);
+    while (*str1 && *str2 && --size)
+    {
+		if(*str1 != *str2)
+			return (*str1 - *str2);
+		str1++;
+		str2++;
+    }
+    return (*str1 - *str2);
 }
