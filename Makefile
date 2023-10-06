@@ -8,21 +8,24 @@
 	#archivo fuente en un archivo objeto usando las acciones que se le 
 	#especifica al target
 NAME = libft.a
+LIBFTH = libft.h
 
 CCFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isascii.c\
- ft_isdigit.c ft_memchr.c ft_memmove.c ft_strdup.c ft_strlcpy.c ft_strlen.c\
- ft_strnstr.c ft_toupper.c ft_substr.c ft_strjoin.c
+SRC = ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_bzero.c\
+	ft_calloc.c ft_atoi.c ft_memchr.c ft_memcmp.c ft_memmove.c ft_memcpy.c ft_memset.c\
+	ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
+	ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c\
+	ft_toupper.c
 
 OBJ = $(SRC:.c=.o)
-LIBFTH = libft.h
 
 all: $(NAME)
 
 #para que cree el archivo .a
 $(NAME): $(OBJ) $(LIBFTH)
 	ar rcs $(NAME) $(OBJ)
+
 #arreglar como se ejecuta el main
 #para que se ejecute el archivo main.c
 all2: $(OBJ) main.o libft.h

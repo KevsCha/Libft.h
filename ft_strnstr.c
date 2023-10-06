@@ -1,15 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/01 15:28:33 by kquispe           #+#    #+#             */
+/*   Updated: 2023/10/01 17:21:53 by kquispe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_strnstr(const char *str1, const char *str2, size_t num)
+char	*ft_strnstr(const char *str1, const char *str2, size_t num)
 {
-	while (*str1 && *str2 && --num)
+	int		i;
+	while (*str1 && --num)
 	{
-		if(*str1 != *str2)
-			return (*str1 - *str2);
+		i = 0;
+		while (str1[i] == str2[i])
+		{
+			if (str2[i + 1] == '\0')
+				return ((char *)str1);
+			i++;	
+		}
 		str1++;
-		str2++;
 	}
 	return (0);
 }
-
-
