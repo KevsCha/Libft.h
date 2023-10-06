@@ -1,32 +1,22 @@
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*str;
 	size_t	i;
-	size_t	len_s;
-	char	*strCcat;
+	size_t	len_s1;
 
-	i = 0;
-	len_s = ft_strlen(s1) - 1; 
+	len_s1 = ft_strlen(s1) - 1;
+
+// tengo que buscar las coincidencias de set al principio y al final 
 // y de esas pocicones crear un calcular un leg y ponerlo con un 
 // malloc a la nueva string desde tal poscion hasta la final de posc
-	while (s1[i] && strchr(set, s1[i]) != NULL)
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (s1[len_s] && strchr(set, s1[len_s]) != NULL)
-		len_s--;
+	while (s1[len_s1] && ft_strchr(set, s1[len_s1]))
+		len_s1--;
+	printf("%c___%c",s1[i], s1[len_s1]);
+	str = (char *)s1;
 
-	/*
-	TODO: calcular el leng entre los espacios que donde se encotraron las
-	coincidencias, malloc, while, caracter null,  return 
-	while (i + 1 <  )
-	{
-
-	}
-	*/
-	printf("%zu _ %zu\n", i, len_s);
-	printf("%c __ %c", s1[i], s1[len_s]);
-
-
-	return ("\nreturn");
+	return (0);
 }
