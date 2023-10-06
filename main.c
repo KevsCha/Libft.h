@@ -6,11 +6,6 @@ int main(void)
 	char *str1 = "... hhola que tal ...";
 	char *set = ". h";
 	
-	printf("%s\n", ft_strchr(str1, 'l'));
-	printf("%s\n", ft_strrchr(str1, 'l'));
-	printf("%s\n", strchr(str1, 'l'));
-	printf("%s\n", strrchr(str1, 'l'));
-	
 	printf("%s", ft_strtrim(str1, set));
 	/*
 	*ft_strjoin = :3

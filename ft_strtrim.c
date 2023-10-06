@@ -1,32 +1,40 @@
 #include "libft.h"
-#include <string.h>
 
+size_t	lenTot(size_t in, size_t leng)
+{
+	size_t	i;
+
+	i = 0;
+	while (in <= leng)
+	{
+		in++;
+		i++;
+	}
+	return (i);
+}
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	len_s;
+	size_t	j;
 	char	*strCcat;
 
 	i = 0;
+	j = 0;
 	len_s = ft_strlen(s1) - 1; 
-// y de esas pocicones crear un calcular un leg y ponerlo con un 
-// malloc a la nueva string desde tal poscion hasta la final de posc
-	while (s1[i] && strchr(set, s1[i]) != NULL)
+	while (s1[i] && ft_strchr(set, s1[i]) != NULL)
 		i++;
-	while (s1[len_s] && strchr(set, s1[len_s]) != NULL)
+	while (s1[len_s] && ft_strchr(set, s1[len_s]) != NULL)
 		len_s--;
-
-	/*
-	TODO: calcular el leng entre los espacios que donde se encotraron las
-	coincidencias, malloc, while, caracter null,  return 
-	while (i + 1 <  )
+	len_s = lenTot(i, len_s);
+	strCcat = (char *)malloc(len_s + 1);
+	while (j < len_s)
 	{
-
+		strCcat[j] = s1[i];
+		j++;
+		i++;
 	}
-	*/
-	printf("%zu _ %zu\n", i, len_s);
-	printf("%c __ %c", s1[i], s1[len_s]);
-
-
-	return ("\nreturn");
+	strCcat[j] = '\0';
+	printf("%ld\n%s", j, strCcat);
+	return ("\n");
 }
