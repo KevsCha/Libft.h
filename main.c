@@ -1,15 +1,26 @@
 #include <string.h>
 #include "libft.h"
 #include <ctype.h>
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+void con(unsigned int index, char c)
+{
+	if (c >= 'a' && c <= 'z')
+		printf("%c",c);
+	else if (c >= 'A' && c <= 'Z')
+		printf("%c",c);
+	else 
+		printf("%c",c);
+}
 int main(void)
 {
-	int c = -456;
-	char *str;
-	str = ft_itoa(c);
-	printf("%s", str);
-	free(str);
-	//printf("%s", ft_itoa(c));
+	char *str = "HOLA GUAPETON";
+	ft_putchar(str[0]);
+	//ft_striteri(str, &con);
 	/*
+	*ft_strmapi = :c
 	*ft_itoa = :3
 	*fT_split = :3
 	*ft_strjoin = :3
