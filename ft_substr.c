@@ -11,7 +11,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	len_s = ft_strlen(s + start);
 	len = len < len_s ? len : len_s;
-	substr = (char *)malloc(len);
+	substr = (char *)malloc(len + 1);
 	while (i < len)
 	{
 		substr[i] = s[start + i];

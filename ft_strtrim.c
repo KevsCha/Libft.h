@@ -35,6 +35,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	}
 	strCcat[j] = '\0';
-	printf("%ld\n%s", j, strCcat);
-	return ("\n");
+	return (strCcat);
 }

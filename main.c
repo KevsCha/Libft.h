@@ -3,22 +3,22 @@
 #include <ctype.h>
 int main(void)
 {
-	char *str1 = " hdo lahhh ";
+	char *str1 = " hdo lahhh o   ";
 	char c = ' ';
 	char **strs;
-	ft_split(str1, c);
+	strs = ft_split(str1, c);
+	int k = 0;
+	int	a = 0;
+	while (strs[k] != NULL)
+	{
+		printf("%s\n", strs[k]);
+		free(strs[k]);
+		k++;
+	}
+	printf("%d", k);
+	free(strs);
 	/*
-	1 = "    h"
-	2 = " la c "
-	3 = " m "
-	4 = " estas fsd "
-	5 = " "
-	6 = " "
-	*/
-
-	
-	/*
-	*fT_split = :C
+	*fT_split = :3
 	*ft_strjoin = :3
 	*ft_strnstr = :3
 	*ft_memcmp = :3
