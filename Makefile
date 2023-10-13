@@ -16,7 +16,10 @@ SRC = ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_bzero.
 	ft_calloc.c ft_atoi.c ft_memchr.c ft_memcmp.c ft_memmove.c ft_memcpy.c ft_memset.c\
 	ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
 	ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_strmapi.c\
-	ft_striteri.c ft_tolower.c ft_toupper.c ft_itoa.c
+	ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
+	ft_tolower.c ft_toupper.c ft_itoa.c
+
+BONUS = ft_lstnew.c 
 
 OBJ = $(SRC:.c=.o)
 
@@ -29,10 +32,15 @@ $(NAME): $(OBJ) $(LIBFTH)
 #arreglar como se ejecuta el main
 #para que se ejecute el archivo main.c
 all2: $(OBJ) main.o libft.h
-	gcc $(CCFLAGS) main.o $(OBJ) 
+	gcc $(CCFLAGS) main.o $(OBJ)
+
+all3: $(BONUS) main.o libft.h
+	gcc $(CCFLAGS) main.o $(BONUS)
 
 main.o: main.c libft.h
 	gcc -c main.c
+
+bonus: $(OBJ)
 
 clean:
 	rm -f *.o a.out

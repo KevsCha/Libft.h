@@ -4,23 +4,17 @@
 void ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-void con(unsigned int index, char c)
-{
-	if (c >= 'a' && c <= 'z')
-		printf("%c",c);
-	else if (c >= 'A' && c <= 'Z')
-		printf("%c",c);
-	else 
-		printf("%c",c);
-}
+}	
 int main(void)
 {
-	char *str = "HOLA GUAPETON";
-	ft_putchar(str[0]);
-	//ft_striteri(str, &con);
+	
 	/*
-	*ft_strmapi = :c
+	*ft_lstnew = :c
+	*ft_putnbr_fd = :3
+	*ft_putendl_fd = :3
+	*ft_putstr_fd = :3
+	*ft_puthcar_fd = :3
+	*ft_strmapi = :3
 	*ft_itoa = :3
 	*fT_split = :3
 	*ft_strjoin = :3

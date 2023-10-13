@@ -4,6 +4,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef struct slist
+{
+    void    *content;
+    struct s_list   *next;
+    
+}t_list;
+
+
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t num, size_t bit);
 void	*ft_memchr(const void *ptr, int c, size_t num);
@@ -33,7 +41,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 #endif
