@@ -1,15 +1,35 @@
 #include <string.h>
 #include "libft.h"
 #include <ctype.h>
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}	
+
 int main(void)
 {
+	char *str[] = {"Hola","soy", "un", "nodo", NULL};
+	int i = 0;
+
+	t_list *nodo;
+	t_list *head;
+	t_list *lst;
+
+	head = NULL;
+	while (str[i])
+	{	
+		nodo = ft_lstnew(str[i]);
+		ft_lstadd_front(&head, nodo);
+		i++;
+	}
+	int size = ft_lstsize(head);
+	printf("%d", i);
+	while (size > 0)
+	{
+		size--;
+		free (head);
+		head = (t_list *)head -> next;
+	}
 	
 	/*
-	*ft_lstnew = :c
+	*ft_
+	*ft_lstnew = :3
 	*ft_putnbr_fd = :3
 	*ft_putendl_fd = :3
 	*ft_putstr_fd = :3

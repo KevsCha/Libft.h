@@ -19,7 +19,9 @@ SRC = ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_bzero.
 	ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
 	ft_tolower.c ft_toupper.c ft_itoa.c
 
-BONUS = ft_lstnew.c 
+BONUS_SRC = ft_lstnew.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c
+
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 OBJ = $(SRC:.c=.o)
 
@@ -34,8 +36,8 @@ $(NAME): $(OBJ) $(LIBFTH)
 all2: $(OBJ) main.o libft.h
 	gcc $(CCFLAGS) main.o $(OBJ)
 
-all3: $(BONUS) main.o libft.h
-	gcc $(CCFLAGS) main.o $(BONUS)
+all3: $(BONUS_OBJ) main.o libft.h
+	gcc $(CCFLAGS) main.o $(BONUS_OBJ)
 
 main.o: main.c libft.h
 	gcc -c main.c

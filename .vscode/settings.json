@@ -1,7 +1,9 @@
 {
     "files.associations": {
         "random": "c",
-        "functional": "c"
+        "functional": "c",
+        "libft.h": "c",
+        "ctype.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
