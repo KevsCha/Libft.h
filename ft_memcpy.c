@@ -6,11 +6,12 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:33:44 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/01 15:34:19 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:39:56 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*str1;

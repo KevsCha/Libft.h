@@ -6,60 +6,61 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:28:54 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/13 13:28:54 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:40:52 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int expo(int n)
-{
-    int i;
-    int div;
 
-    i = 0;
-    div = 1;
-    while (n != 0)
-    {
-        n /= 10;
-        i++;
-    }
-    while (--i > 0)
-        div *= 10;
-    return (div);
+int	expo(int n)
+{
+	int	i;
+	int	div;
+
+	i = 0;
+	div = 1;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	while (--i > 0)
+		div *= 10;
+	return (div);
 }
 
-int max_int(int n, int fd)
+int	max_int(int n, int fd)
 {
-    if (n == -2147483647)
-    {
-        ft_putchar_fd('-', fd);
-        ft_putchar_fd('2', fd);
-        n = -(n % 1000000000);
-    }
-    if (n < 0)
-    {
-        ft_putchar_fd('-', fd);
-        n *= -1; 
-    }
-    return (n);
+	if (n == -2147483647)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		n = -(n % 1000000000);
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	return (n);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-    int dig;
-    int div;
+	int	dig;
+	int	div;
 
-    n = max_int(n, fd);
-    if (n >= 0 && n <= 9)
-        ft_putchar_fd(n + '0', fd);
-    else
-    {
-        div = expo(n);
-        while (div != 0)
-        {
-            dig = ((n / div) % 10) + '0';
-            div /= 10;
-            ft_putchar_fd(dig, fd);
-        }
-    }    
+	n = max_int(n, fd);
+	if (n >= 0 && n <= 9)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
+		div = expo(n);
+		while (div != 0)
+		{
+			dig = ((n / div) % 10) + '0';
+			div /= 10;
+			ft_putchar_fd(dig, fd);
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:01:26 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/12 13:01:26 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:41:17 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-    while (*s)
-    {
-        write(fd, &(*s), 1);
-        s++;
-    }
+	while (*s)
+	{
+		write(fd, &(*s), 1);
+		s++;
+	}
 }

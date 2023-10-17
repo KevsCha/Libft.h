@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:13:15 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/13 13:13:15 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:40:16 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-    while (*s)
-    {
-        write(fd, &(*s), 1);
-        s++;
-    }
-    write(fd, "\n", 1);
+	while (*s)
+	{
+		write(fd, &(*s), 1);
+		s++;
+	}
+	write(fd, "\n", 1);
 }

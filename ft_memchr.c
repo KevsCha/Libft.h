@@ -6,24 +6,24 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:31:51 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/01 15:34:04 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:19:47 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *ptr, int c, size_t num)
+void	*ft_memchr(const void *ptr, int c, size_t num)
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	i = 0;
-	str =  (char *)ptr;
+	str = (char *)ptr;
 	while (i < num)
 	{
 		if (str[i] == c)
 			return (str + i);
 		i++;
 	}
-	return(0);
+	return (0);
 }

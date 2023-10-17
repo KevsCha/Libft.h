@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 15:34:58 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/01 15:36:31 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:24:43 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *str)
 {
-	int	i;
-	int	size;
+	int		i;
+	int		size;
 	char	*temp;
 
 	i = 0;

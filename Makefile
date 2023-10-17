@@ -44,7 +44,11 @@ all3: $(BONUS_OBJ) $(OBJ) main.o libft.h
 main.o: main.c libft.h
 	gcc -c main.c
 
-bonus: $(OBJ)
+bonus: $(BONUS_OBJ) 
+	ar rcs $(NAME) $(BONUS_OBJ) $(OBJ)
 
 clean:
 	rm -f *.o a.out
+
+fclean:	clean
+	rm -f $(NAME)
