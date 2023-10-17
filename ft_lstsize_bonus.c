@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:09:27 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/14 19:27:14 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/14 23:36:33 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_lstsize(t_list *lst)
     int i;
 
     i = 0;
-    while (lst -> next != NULL)
+    while (lst != NULL)
     {
         lst = (t_list *)lst -> next;
         i++;
