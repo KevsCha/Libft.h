@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:21:32 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/01 20:10:36 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/24 10:50:30 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	size_t	i;
+	size_t	j;
 	char	*temp;
-	int		i;
 
-	temp = (char *)s;
 	i = 0;
-	while (i < ft_strlen(temp) + 1)
+	temp = (char *)s;
+	while (temp[i])
 	{
 		if (temp[i] == c)
 			return (temp + i);
 		i++;
 	}
+	if (temp[i] == c)
+		return (temp + i);
 	return (0);
 }
