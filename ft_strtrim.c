@@ -6,47 +6,44 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:51:07 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 16:52:13 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/21 09:30:26 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	lentot(size_t in, size_t leng)
+int	ft_true(char const *str, char c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (in <= leng)
-	{
-		in++;
-		i++;
-	}
-	return (i);
+	while (str[i])
+		if (str[i++] == c)
+			return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
-	size_t	len_s;
 	size_t	j;
+	size_t	len_s;
 	char	*strc_cat;
 
 	i = 0;
 	j = 0;
-	len_s = ft_strlen(s1) - 1;
-	while (s1[i] && ft_strchr(set, s1[i]) != NULL)
+	len_s = ft_strlen(s1);
+	while (ft_true(set, s1[i]) && s1[i])
 		i++;
-	while (s1[len_s] && ft_strchr(set, s1[len_s]) != NULL)
+	while (ft_true(set, s1[len_s - 1]) && (len_s - 1))
 		len_s--;
-	len_s = lentot(i, len_s);
-	strc_cat = (char *)malloc(len_s + 1);
-	while (j < len_s)
-	{
-		strc_cat[j] = s1[i];
-		j++;
-		i++;
-	}
+	if (len_s < i)
+		len_s = i;
+	strc_cat = malloc(len_s - i + 1);
+	if (!strc_cat)
+		return (NULL);
+	while (i < len_s)
+		strc_cat[j++] = s1[i++];
 	strc_cat[j] = '\0';
 	return (strc_cat);
 }
