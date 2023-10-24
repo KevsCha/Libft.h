@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:50:10 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 18:28:56 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/21 03:49:16 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	if (size - size_dest > 0)
 		end = size - 1 - size_dest;
 	while (i < end && src[i])
-	{	
+	{
 		dest[size_dest + i] = src[i];
 		i++;
 	}
