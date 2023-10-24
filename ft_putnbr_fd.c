@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:28:54 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 16:40:52 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/24 17:01:37 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	expo(int n)
 
 int	max_int(int n, int fd)
 {
-	if (n == -2147483647)
+	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
@@ -47,8 +47,8 @@ int	max_int(int n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	dig;
-	int	div;
+	int		dig;
+	int		div;
 
 	n = max_int(n, fd);
 	if (n >= 0 && n <= 9)

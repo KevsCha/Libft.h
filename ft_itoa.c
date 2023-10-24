@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:58:51 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 16:33:30 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/24 16:55:22 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ size_t	len_str(int n)
 	size_t	i;
 
 	i = 0;
+	if (n == -2147483648)
+		return (11);
 	if (n == 0)
 		return (1);
 	if (n < 0)
@@ -62,6 +64,11 @@ char	*ft_itoa(int n)
 		str[i++] = '-';
 	while (i < len)
 	{
+		if (n == -2147483648)
+		{
+			n = 147483648;
+			str[i++] = '2';
+		}
 		str[i] = ft_char(n, i, len - 1);
 		i++;
 	}
