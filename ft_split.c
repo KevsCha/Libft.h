@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:45:08 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/24 16:13:40 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/27 16:20:20 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ unsigned int	ft_start(const char *str, int posig, char c)
 	i = 0;
 	start = 0;
 	if (posig == 0 && str[0] != c)
-		return(0);	
+		return (0);
 	while (str[i])
 	{
 		if (i == 0)
@@ -32,7 +32,7 @@ unsigned int	ft_start(const char *str, int posig, char c)
 		if (posig == 0)
 			i--;
 		if (start == posig)
-			break;
+			break ;
 		i++;
 	}
 	i++;
@@ -82,7 +82,6 @@ char	**ft_split(char const *s, char c)
 	if (astr == NULL)
 		return (NULL);
 	astr[leng_astr - 1] = NULL;
-	
 	while (leng_astr > 1)
 	{
 		start = ft_start(s, i, c);

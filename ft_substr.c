@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:52:23 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/24 13:47:24 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/10/27 16:20:00 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s) || (char)!s[0] || len == 0)	
+	if (start > ft_strlen(s) || (char) !s[0] || len == 0)
 		return (ft_strdup(""));
 	len_s = ft_strlen(s + start);
 	if (len > len_s)
