@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/06 18:04:31 by kquispe           #+#    #+#              #
+#    Updated: 2023/11/06 18:06:11 by kquispe          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #Declarar variables 
 #declara una variable que almacene una lista de los las funciones pero 
 	#camviando la extencion "Variable":.c=.o
@@ -46,3 +58,5 @@ clean:
 
 fclean:	clean
 	rm -f $(NAME)
+
+re: fclean all
