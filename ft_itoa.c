@@ -6,13 +6,13 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:58:51 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/24 16:55:22 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/06 14:48:10 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_char(int num, int pos, size_t end_pos)
+static char	ft_char(int num, int pos, size_t end_pos)
 {
 	int	div;
 
@@ -30,7 +30,7 @@ char	ft_char(int num, int pos, size_t end_pos)
 	return (num);
 }
 
-size_t	len_str(int n)
+static size_t	len_str(int n)
 {
 	size_t	i;
 

@@ -6,13 +6,13 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:51:07 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/21 09:30:26 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/06 14:50:15 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_true(char const *str, char c)
+static int	ft_true(char const *str, char c)
 {
 	int	i;
 

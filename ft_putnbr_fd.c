@@ -6,13 +6,13 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:28:54 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/24 17:01:37 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/06 14:48:45 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	expo(int n)
+static int	expo(int n)
 {
 	int	i;
 	int	div;
@@ -29,7 +29,7 @@ int	expo(int n)
 	return (div);
 }
 
-int	max_int(int n, int fd)
+static int	max_int(int n, int fd)
 {
 	if (n == -2147483648)
 	{

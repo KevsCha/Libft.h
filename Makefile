@@ -1,12 +1,18 @@
 #Declarar variables 
 #declara una variable que almacene una lista de los las funciones pero 
 	#camviando la extencion "Variable":.c=.o
+
 #Crear los targets que se ejecutaran
 	#all, clean, fclean, re
+
 #"%.c%.o" es un target que se utiliza cuando el make detecta que existe un 
 	#archivo con extencion .o y hace todo lo necesario par compilar ese 
 	#archivo fuente en un archivo objeto usando las acciones que se le 
 	#especifica al target
+
+#para que cree el archivo .a
+#arreglar como se ejecuta el main
+#para que se ejecute el archivo main.c
 NAME = libft.a
 LIBFTH = libft.h
 
@@ -29,20 +35,8 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-#para que cree el archivo .a
 $(NAME): $(OBJ) $(LIBFTH)
 	ar rcs $(NAME) $(OBJ)
-
-#arreglar como se ejecuta el main
-#para que se ejecute el archivo main.c
-all2: $(OBJ) main.o libft.h
-	gcc $(CCFLAGS) main.o $(OBJ)
-
-all3: $(BONUS_OBJ) $(OBJ) main.o libft.h
-	gcc $(CCFLAGS) main.o $(BONUS_OBJ) $(OBJ)
-
-main.o: main.c libft.h
-	gcc -c main.c
 
 bonus: $(BONUS_OBJ) $(OBJ) $(LIBFTH)
 	ar rcs $(NAME) $(BONUS_OBJ) $(OBJ)

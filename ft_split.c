@@ -6,14 +6,13 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:45:08 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/27 16:20:20 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/06 15:05:05 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//?str = lorem ipsum..., posig = i(0,1,2,3,4,5..),c = " " 
-unsigned int	ft_start(const char *str, int posig, char c)
+static unsigned int	ft_start(const char *str, int posig, char c)
 {
 	int	i;
 	int	start;
@@ -39,7 +38,7 @@ unsigned int	ft_start(const char *str, int posig, char c)
 	return (i);
 }
 
-size_t	ft_end(const char *str, int posin, char c)
+static size_t	ft_end(const char *str, int posin, char c)
 {
 	size_t	i;
 
@@ -52,7 +51,7 @@ size_t	ft_end(const char *str, int posin, char c)
 	return (i);
 }
 
-int	ft_leng_malloc(char const *str, char c)
+static int	ft_leng_malloc(char const *str, char c)
 {
 	int		i;
 	size_t	j;
@@ -66,6 +65,17 @@ int	ft_leng_malloc(char const *str, char c)
 		i++;
 	}
 	return (j);
+}
+
+static char	**freetwo(char **astr, int i)
+{
+	while (i >= 0)
+	{
+		free(astr[i]);
+		i--;
+	}
+	free(astr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -87,6 +97,8 @@ char	**ft_split(char const *s, char c)
 		start = ft_start(s, i, c);
 		end = ft_end(s, start, c);
 		astr[i] = ft_substr(s, start, end);
+		if (!astr[i])
+			return (freetwo(astr, i));
 		i++;
 		leng_astr--;
 	}
