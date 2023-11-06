@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:31:51 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 16:19:47 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/06 14:31:38 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *ptr, int c, size_t num)
 	str = (char *)ptr;
 	while (i < num)
 	{
-		if (str[i] == c)
+		if (str[i] == (char)c)
 			return (str + i);
 		i++;
 	}
