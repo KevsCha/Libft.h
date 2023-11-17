@@ -1,4 +1,5 @@
 # Libft.h
+
 <h1>Primer proyecto de 42Mad</h1>
 <div>
   <div>
@@ -16,3 +17,4 @@
     <p>Wildcard:</p>
   </div>
 </div>
+https://man7.org/linux/man-pages/man3/atoi.3.html#top_of_page
