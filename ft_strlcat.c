@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 00:50:10 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/21 03:49:16 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/17 21:30:43 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	end;
 
 	i = 0;
+	end = 0;
 	size_src = ft_strlen(src);
 	size_dest = ft_strlen(dest);
 	if (size == 0)

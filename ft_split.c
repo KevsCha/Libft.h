@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:45:08 by kquispe           #+#    #+#             */
-/*   Updated: 2023/11/06 15:05:05 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/16 19:10:40 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		end = ft_end(s, start, c);
 		astr[i] = ft_substr(s, start, end);
 		if (!astr[i])
-			return (freetwo(astr, i));
+			return (freetwo(astr, i - 1));
 		i++;
 		leng_astr--;
 	}

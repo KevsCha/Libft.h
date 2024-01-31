@@ -6,13 +6,13 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:58:51 by kquispe           #+#    #+#             */
-/*   Updated: 2023/11/06 14:48:10 by kquispe          ###   ########.fr       */
+/*   Updated: 2024/01/08 13:22:39 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	ft_char(int num, int pos, size_t end_pos)
+static char	ft_char(int num, int pos, int end_pos)
 {
 	int	div;
 
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	len = len_str(n);
 	str = (char *)malloc(len + 1 * sizeof(char));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	if (n < 0)
 		str[i++] = '-';

@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:34:06 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/17 17:25:15 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/17 21:24:56 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	if (ft_dest > ft_src && ft_dest < ft_src + n)
 	{
-		while (--n != -1)
+		while ((int)--n != -1)
 			ft_dest[n] = ft_src[n];
 	}
 	else

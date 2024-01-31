@@ -6,7 +6,7 @@
 #    By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 18:04:31 by kquispe           #+#    #+#              #
-#    Updated: 2023/11/06 18:06:11 by kquispe          ###   ########.fr        #
+#    Updated: 2023/12/14 13:35:35 by kquispe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@
 NAME = libft.a
 LIBFTH = libft.h
 
-CCFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_isalnum.c ft_isdigit.c ft_isascii.c ft_isprint.c ft_isalpha.c ft_bzero.c\
 	ft_calloc.c ft_atoi.c ft_memchr.c ft_memcmp.c ft_memmove.c ft_memcpy.c ft_memset.c\
@@ -41,9 +41,9 @@ BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstl
 	ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
 	ft_lstmap_bonus.c
 
+OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
@@ -54,9 +54,11 @@ bonus: $(BONUS_OBJ) $(OBJ) $(LIBFTH)
 	ar rcs $(NAME) $(BONUS_OBJ) $(OBJ)
 
 clean:
-	rm -f *.o a.out
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean:	clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

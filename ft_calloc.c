@@ -6,7 +6,7 @@
 /*   By: kquispe <kquispe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 15:33:16 by kquispe           #+#    #+#             */
-/*   Updated: 2023/10/27 16:42:07 by kquispe          ###   ########.fr       */
+/*   Updated: 2023/11/18 03:14:34 by kquispe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 void	*ft_calloc(size_t num, size_t bit)
 {
 	char	*arr;
+	size_t	i;
 
 	arr = (char *)malloc(num * bit);
 	if (!arr)
 		return (NULL);
-	ft_bzero(arr, num * bit);
+	i = 0;
+	while (i < num * bit)
+		arr[i++] = '\0';
 	return (arr);
 }
